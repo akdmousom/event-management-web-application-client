@@ -12,7 +12,7 @@ const NavBar = () => {
 
   </>
   return (
-    <div className="navbar max-w-[1200px] mx-auto bg-warning rounded-2xl text-black my-5">
+    <div className="navbar max-w-[1200px]  mx-auto bg-warning rounded-2xl text-black my-5">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -24,7 +24,7 @@ const NavBar = () => {
         </div>
         <div><a className="btn btn-ghost items-center hidden lg:flex normal-case text-base">Event Management</a></div>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center  hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
 
           {navItem}

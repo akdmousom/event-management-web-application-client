@@ -5,3 +5,4 @@
 .dropdown:is(:not(details)) .dropdown-content {
     background: #fbbd23;
 }
+
