@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Weddings",
+        "description": "Celebrate the union of two people in love with a beautiful wedding ceremony and reception.",
+        "img": "https://i.ibb.co/jL2t9mn/Weddings.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Birthday Parties",
+        "description": "Mark another year of life with a fun and memorable birthday party for friends and family.",
+        "img": "https://i.ibb.co/XthhwZ7/birthday.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Anniversaries",
+        "description": "Commemorate years of togetherness and love with an anniversary celebration.",
+        "img": "https://i.ibb.co/jH3HJtN/Anniversaries.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Engagement Parties",
+        "description": "Share the joy of an engagement and the promise of a lifetime together with friends and family.",
+        "img": "https://i.ibb.co/yVJ3dth/Engagement-Parties.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Retirement Parties",
+        "description": "Bid farewell to a career and welcome the relaxation of retirement with a retirement party.",
+        "img": "https://i.ibb.co/qMqVn6N/Retirement-Parties.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Baby Shower",
+        "description": "Celebrate the upcoming arrival of a new bundle of joy with a baby shower for the expectant parents.",
+        "img": "https://i.ibb.co/k3bbsRv/Baby-Shower.jpg"
+    }
+]
