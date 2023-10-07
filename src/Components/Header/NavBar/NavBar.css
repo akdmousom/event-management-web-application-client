@@ -1,0 +1,7 @@
+.menu li > *:not(ul):not(.menu-title):not(details):active, .menu li > *:not(ul):not(.menu-title):not(details).active, .menu li > details > summary:active{
+    color: white;
+}
+
+.dropdown:is(:not(details)) .dropdown-content {
+    background: #fbbd23;
+}

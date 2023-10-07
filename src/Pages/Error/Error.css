@@ -1,0 +1,9 @@
+.error-background{
+    background-image: url('../../assets/Error/Error.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.not{
+    color: white;
+}
