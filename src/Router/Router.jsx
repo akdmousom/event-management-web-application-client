@@ -5,7 +5,10 @@ import Home from "../Pages/Home/Home";
 import PrivetRoute from "./PrivetRoute/PrivetRoute";
 import OurSeervices from "../Pages/OurService/OurSeervices";
 import AboutUs from "../Pages/AboutUs/AboutUs";
-import Support from "../Pages/Support/Support";
+import Insurance from "../Pages/Insurance/Insurance";
+import Destination from "../Pages/Destination/Destination";
+import Offers from "../Pages/Offers/Offers";
+import EventDetails from "../Pages/EventDetails/EventDetails";
 
 const Router = createBrowserRouter([
     {
@@ -26,8 +29,20 @@ const Router = createBrowserRouter([
                 element: <PrivetRoute><OurSeervices></OurSeervices></PrivetRoute>
             },
             {
-                path: '/support',
-                element: <Support/>
+                path: '/insurance',
+                element: <Insurance/>
+            },
+            {
+                path: '/destination',
+                element: <Destination/>
+            },
+            {
+                path: '/offers',
+                element: <Offers/>
+            },
+            {
+                path: '/servicedetails/:id',
+                element: <EventDetails/>
             }
         ]
         

@@ -2,7 +2,7 @@ import './Support.css'
 import {BiSupport} from 'react-icons/bi'
 import {AiFillSafetyCertificate} from 'react-icons/ai'
 import {FaMapMarker} from 'react-icons/fa'
-import {HiCurrencyBangladeshi} from 'react-icons/hi'
+import {BiSolidBadgeDollar} from 'react-icons/bi'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import {Link} from 'react-router-dom'
@@ -17,18 +17,24 @@ const Support = () => {
                 <h4 className='text-base text-white'>24/7 Support</h4>
             </div>
             </Link>
+            <Link to={'/insurance'}>
             <div className='border custom-hover hover:bg-warning lg:hover:translate-y-[-10px] hover:cursor-pointer flex items-center  justify-center gap-4 flex-col border-warning p-10 rounded-tl-2xl rounded-br-2xl'>
                 <AiFillSafetyCertificate className='text-5xl text-white' />
                 <h4 className='text-base text-white'>Insurance Guarantee</h4>
             </div>
+            </Link>
+            <Link to={'/destination'}>
             <div className='border custom-hover hover:bg-warning lg:hover:translate-y-[-10px] hover:cursor-pointer flex items-center  justify-center gap-4 flex-col border-warning p-10 rounded-tl-2xl rounded-br-2xl'>
                 <FaMapMarker  className='text-5xl text-white' />
                 <h4 className='text-base text-white'>Destination Event</h4>
             </div>
+            </Link>
+            <Link to={'/offers'}>
             <div className='border custom-hover hover:bg-warning lg:hover:translate-y-[-10px] hover:cursor-pointer flex items-center  justify-center gap-4 flex-col border-warning p-10 rounded-tl-2xl rounded-br-2xl'>
-                <HiCurrencyBangladeshi className='text-5xl text-white' />
-                <h4 className='text-base text-white'>Reasonable Charge</h4>
+                <BiSolidBadgeDollar className='text-5xl text-white' />
+                <h4 className='text-base text-white'>Offers</h4>
             </div>
+            </Link>
             
         </div>
     );
