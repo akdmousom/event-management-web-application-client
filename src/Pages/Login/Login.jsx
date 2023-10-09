@@ -50,8 +50,8 @@ const Login = () => {
 
 
     return (
-      <div className="max-w-[1200px] mx-auto w-96">
-      <form onSubmit={handleLogin} className="card-body">
+      <div className="lg:max-w-[1200px] lg:mx-auto">
+      <form  onSubmit={handleLogin} className="card-body w-82">
           <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
@@ -68,7 +68,7 @@ const Login = () => {
           </label>
         </div>
 
-        <div className="flex flex-col ">
+        <div className="flex  ">
         
          
            <button onClick={googleSignIn} className="btn bg-white"><FcGoogle className="text-2xl"/></button>

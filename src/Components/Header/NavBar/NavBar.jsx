@@ -46,7 +46,7 @@ const NavBar = () => {
       </div>
       <div className="navbar-end gap-2">
         { loading ? <span className="loading loading-infinity loading-xs"></span> :
-        userInfo?.displayName ? <h1 className='font-bold'>Welcome, {userInfo.displayName}</h1> : userInfo == null ? "": userInfo?.displayName == null && userName == undefined ? 'Anonymous' : <h1 className='font-bold'>Welcome, {userName}</h1> 
+        userInfo?.displayName ? <h1 className='font-bold text-base'>Welcome, {userInfo.displayName}</h1> : userInfo == null ? "": userInfo?.displayName == null && userName == undefined ? 'Anonymous' : <h1 className='font-bold'>Welcome, {userName}</h1> 
         }
         
         {

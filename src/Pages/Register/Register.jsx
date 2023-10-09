@@ -70,7 +70,7 @@ const Register = () => {
   
   return (
 
-    <div className="max-w-[1200px] mx-auto w-96">
+    <div className="max-w-[1200px] mx-auto">
       <form onSubmit={handleRegister} className="card-body">
         <div className="form-control">
           <label className="label">
@@ -99,7 +99,7 @@ const Register = () => {
             <Link to={'/login'} href="/login" className="label-text-alt link link-hover">Already Have Account</Link>
           </label>
         </div>
-        <div className="flex flex-col ">
+        <div className="flex  ">
         
          
            <button onClick={googleSignIn} className="btn bg-white"><FcGoogle className="text-2xl"/></button>
