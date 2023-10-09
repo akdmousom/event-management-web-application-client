@@ -8,6 +8,7 @@ const NavBar = () => {
   const {userInfo, handleSignOut, userName, userImg, loading} = useContext(AuthContext)
   
   console.log(userInfo);
+  console.log('userinfo',userName, userImg);
   const navItem = <>
 
     <li> <NavLink to={'/'}> Home </NavLink></li>
@@ -45,15 +46,15 @@ const NavBar = () => {
       </div>
       <div className="navbar-end gap-2">
         { loading ? <span className="loading loading-infinity loading-xs"></span> :
-        userInfo?.displayName ? <h1 className='font-bold'>Welcome, {userInfo.displayName}</h1> : userInfo == null ? "": userInfo?.displayName == null ? <h1 className='font-bold'>Welcome, {userName}</h1> : ''
+        userInfo?.displayName ? <h1 className='font-bold'>Welcome, {userInfo.displayName}</h1> : userInfo == null ? "": userInfo?.displayName == null && userName == undefined ? 'Anonymous' : <h1 className='font-bold'>Welcome, {userName}</h1> 
         }
         
         {
           userInfo ? <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              {
-                userInfo?.photoURL ? <img src={userInfo?.photoURL} /> : userInfo?.photoURL == null ? <img src={userImg}/> : userImg?.length == 0 ? <img src={user}/> : <img src={userImg}/>
+              {loading ? <span className="loading loading-infinity loading-xs"></span> :
+                userInfo?.photoURL ? <img src={userInfo?.photoURL} /> : userInfo?.photoURL == null && userImg == undefined ? <img src={user}/> : <img src={userImg}/>
               }
             </div>
           </label>
