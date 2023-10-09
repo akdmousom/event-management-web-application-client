@@ -4,7 +4,7 @@ const Footer = () => {
             <aside>
                
                 <p className="font-bold">
-                    Event Management. <br />Managing Event Since 1996
+                Barnadha. <br />Managing Event Since 1996
                 </p>
                 <p>Copyright © 2023 - All right reserved</p>
             </aside>

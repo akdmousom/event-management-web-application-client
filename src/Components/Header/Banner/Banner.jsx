@@ -12,7 +12,7 @@ const Banner = () => {
                     <p className="mb-5 text-white">Hi, we are the best <span className='event-management'>Event Management</span> service provider
                     in town. For more information about our services please visit our service page.
                      </p>
-                    <Link to={'/services'} className="btn btn-warning  text-black">Our Services</Link >
+                    <Link to={'/service'} className="btn btn-warning  text-black">Our Services</Link >
                 </div>
             </div>
         </div>
