@@ -10,6 +10,9 @@ import Destination from "../Pages/Destination/Destination";
 import Offers from "../Pages/Offers/Offers";
 import EventDetails from "../Pages/EventDetails/EventDetails";
 import SupportTeam from "../Pages/SupportTeam/SupportTeam";
+import Login from "../Pages/Login/Login";
+import Register from "../Pages/Register/Register";
+import MakePayment from "../Pages/MakePayment/MakePayment";
 
 const Router = createBrowserRouter([
     {
@@ -47,7 +50,19 @@ const Router = createBrowserRouter([
             },
             {
                 path: '/servicedetails/:id',
-                element: <EventDetails/>
+                element:<EventDetails/>
+            },
+            {
+                path: '/login',
+                element: <Login/>
+            },
+            {
+                path: '/register',
+                element:<Register/>
+            }, 
+            {
+                path: '/makepayment',
+                element: <PrivetRoute><MakePayment/> </PrivetRoute>
             }
         ]
         

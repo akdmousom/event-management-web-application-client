@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const ServiceDetails = ({plan, price, details}) => {
 
   const handlePrice = () => {
-    localStorage.setItem('price', JSON.stringify(price))
+    localStorage.setItem('plan', JSON.stringify([plan, price, details ]))
 
   }
   

@@ -5,7 +5,10 @@ export const categoryData = createContext(null)
 
 const CategoryDataContext = ({children}) => {
 
+
     const [categorys, setCategorys] = useState();
+    const [names, setEachName] = useState('')
+    const [imgg, setEachImg] = useState('')
 
     useEffect(()=>{
         fetch('/EventCategory.json')
@@ -13,8 +16,19 @@ const CategoryDataContext = ({children}) => {
         .then(data => setCategorys(data))
     },[])
 
+    const handleEach = (name, img) => {
+        setEachName(name)
+        setEachImg(img)
+    }
+
+   
+
     const catData = {
         categorys,
+        handleEach,
+        names,
+        imgg
+       
     }
     
     return (

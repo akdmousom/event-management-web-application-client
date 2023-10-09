@@ -1,12 +1,21 @@
 import { NavLink } from 'react-router-dom';
 import user from '../../../assets/Navbar/user.png'
 import './NavBar.css'
+import { useContext } from 'react';
+import { AuthContext } from '../../../Utils/AuthProvider/AuthProvider';
 const NavBar = () => {
+  const {userInfo, handleSignOut, userName, loading} = useContext(AuthContext)
   const navItem = <>
 
     <li> <NavLink to={'/'}> Home </NavLink></li>
     <li> <NavLink to={'/about'}> About Us </NavLink></li>
     <li> <NavLink to={'/service'}> Service </NavLink></li>
+    {
+      loading ? '' :
+      userInfo ? '' : <> <li> <NavLink to={'/login'}> Login </NavLink></li>
+      <li> <NavLink to={'/register'}> Register </NavLink></li> </>
+    }
+    
 
 
 
@@ -31,22 +40,31 @@ const NavBar = () => {
 
         </ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end gap-2">
+        { loading ? <span className="loading loading-infinity loading-xs"></span> :
+        userInfo ? <h1 className='font-bold'>Welcome, {userName}</h1> : ''
+        }
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              <img src={user} />
+              {
+                userInfo?.photoURL ? <img src={userInfo?.photoURL} /> : <img src={user} />
+              }
             </div>
           </label>
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
             <li>
               <a className="justify-between">
                 Profile
-                <span className="badge">New</span>
+                <span className="badge">Updating</span>
               </a>
             </li>
-            <li><a>Settings</a></li>
-            <li><a>Logout</a></li>
+            <li>
+              <a>Settings
+              <span className="badge">Updating</span>
+              </a>
+            </li>
+            <li><button onClick={()=> handleSignOut()}>Logout</button></li>
           </ul>
         </div>
       </div>
