@@ -9,6 +9,7 @@ import Insurance from "../Pages/Insurance/Insurance";
 import Destination from "../Pages/Destination/Destination";
 import Offers from "../Pages/Offers/Offers";
 import EventDetails from "../Pages/EventDetails/EventDetails";
+import SupportTeam from "../Pages/SupportTeam/SupportTeam";
 
 const Router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const Router = createBrowserRouter([
             {
                 path: '/service',
                 element: <PrivetRoute><OurSeervices></OurSeervices></PrivetRoute>
+            },
+            {
+                path: '/supportteam',
+                element:<SupportTeam/>
             },
             {
                 path: '/insurance',

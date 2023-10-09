@@ -11,7 +11,7 @@ const Support = () => {
     AOS.init()
     return (
         <div data-aos="fade-up" className='grid support-section md:grid-cols-4 text-center gap-4 px-5 lg:px-5 xl:px-0 my-[50px] max-w-[1200px] mx-auto '>
-            <Link to={'/support'}>
+            <Link to={'/supportteam'}>
             <div className='border custom-hover hover:bg-warning lg:hover:translate-y-[-10px] hover:cursor-pointer  border-warning  flex items-center  justify-center gap-4 flex-col p-10 rounded-tl-2xl rounded-br-2xl'>
                 <BiSupport className='text-5xl text-white' />
                 <h4 className='text-base text-white'>24/7 Support</h4>

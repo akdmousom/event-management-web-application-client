@@ -1,8 +1,14 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom';
 
 const ServiceDetails = ({plan, price, details}) => {
+
+  const handlePrice = () => {
+    localStorage.setItem('price', JSON.stringify(price))
+
+  }
   
     AOS.init();
 
@@ -132,13 +138,14 @@ const ServiceDetails = ({plan, price, details}) => {
     </ul>
   </div>
   <div className="mt-12 p-0">
-    <button
+    <Link to={'/service'}
       className="block w-full select-none rounded-lg bg-black py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-blue-gray-500/10 transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-gray-500/20 focus:scale-[1.02] focus:opacity-[0.85] focus:shadow-none active:scale-100 active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
       type="button"
       data-ripple-dark="true"
+      onClick={handlePrice}
     >
       Book Service
-    </button>
+    </Link>
   </div>
 </div>
     );
