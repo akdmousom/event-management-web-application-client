@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut} from 'firebase/auth'
+import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, onAuthStateChanged, signInWithPopup, signOut, GoogleAuthProvider} from 'firebase/auth'
 import app from "../../FireBaseConf/FireBaseConf";
 import PropTypes from 'prop-types'
 
@@ -7,8 +7,11 @@ export const AuthContext = createContext(null)
 
 const AuthProvider = ({children}) => {
     const [userName, setUserName] = useState(null)
+    const [userImg, setUserImg] = useState(null)
     const [userInfo, setUserInfo] = useState(null)
     const [loading, setLoading] = useState(true)
+
+    const provider = new GoogleAuthProvider();
 
     const auth = getAuth(app)
 
@@ -37,8 +40,15 @@ const AuthProvider = ({children}) => {
        return signOut(auth)
     }
 
-    const handleUserName = (name) => {
-        setUserName(name)
+    useEffect(()=> {
+        const userProfileInfo = JSON.parse(localStorage.getItem('userProfileInfo'))
+        setUserName(userProfileInfo?.name)
+        setUserImg(userProfileInfo?.Img)
+        
+    },[])
+
+    const googleLogin = () => {
+        return signInWithPopup(auth, provider)
     }
 
     const authInfo = {
@@ -46,9 +56,11 @@ const AuthProvider = ({children}) => {
         handleCreateUser,
         handleSignIn,
         handleSignOut,
-        handleUserName,
         userName,
+        userImg,
         loading,
+        googleLogin,
+        
     }
 
     return (

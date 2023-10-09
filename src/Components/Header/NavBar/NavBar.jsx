@@ -1,10 +1,13 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import user from '../../../assets/Navbar/user.png'
 import './NavBar.css'
 import { useContext } from 'react';
 import { AuthContext } from '../../../Utils/AuthProvider/AuthProvider';
+import toast from 'react-hot-toast';
 const NavBar = () => {
-  const {userInfo, handleSignOut, userName, loading} = useContext(AuthContext)
+  const {userInfo, handleSignOut, userName, userImg, loading} = useContext(AuthContext)
+  
+  console.log(userInfo);
   const navItem = <>
 
     <li> <NavLink to={'/'}> Home </NavLink></li>
@@ -31,7 +34,7 @@ const NavBar = () => {
             {navItem}
           </ul>
         </div>
-        <div><a className="btn btn-ghost items-center hidden lg:flex normal-case text-base">Barnadha</a></div>
+        <div><Link to={'/'} className="btn btn-ghost items-center hidden lg:flex normal-case text-base">Barnadha</Link></div>
       </div>
       <div className="navbar-center  hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -42,13 +45,15 @@ const NavBar = () => {
       </div>
       <div className="navbar-end gap-2">
         { loading ? <span className="loading loading-infinity loading-xs"></span> :
-        userInfo ? <h1 className='font-bold'>Welcome, {userName}</h1> : ''
+        userInfo?.displayName ? <h1 className='font-bold'>Welcome, {userInfo.displayName}</h1> : userInfo == null ? "": userInfo?.displayName == null ? <h1 className='font-bold'>Welcome, {userName}</h1> : ''
         }
-        <div className="dropdown dropdown-end">
+        
+        {
+          userInfo ? <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
               {
-                userInfo?.photoURL ? <img src={userInfo?.photoURL} /> : <img src={user} />
+                userInfo?.photoURL ? <img src={userInfo?.photoURL} /> : userInfo?.photoURL == null ? <img src={userImg}/> : userImg?.length == 0 ? <img src={user}/> : <img src={userImg}/>
               }
             </div>
           </label>
@@ -64,9 +69,13 @@ const NavBar = () => {
               <span className="badge">Updating</span>
               </a>
             </li>
-            <li><button onClick={()=> handleSignOut()}>Logout</button></li>
+            <li><button onClick={()=> {
+              toast.success('Successfully Log Out!')
+              handleSignOut()
+              }}>Logout</button></li>
           </ul>
-        </div>
+        </div> : ''
+        }
       </div>
     </div>
     );

@@ -38,19 +38,19 @@ const Router = createBrowserRouter([
             },
             {
                 path: '/insurance',
-                element: <Insurance/>
+                element: <PrivetRoute><Insurance/></PrivetRoute>
             },
             {
                 path: '/destination',
-                element: <Destination/>
+                element: <PrivetRoute><Destination/></PrivetRoute>
             },
             {
                 path: '/offers',
-                element: <Offers/>
+                element:<PrivetRoute><Offers/></PrivetRoute>
             },
             {
                 path: '/servicedetails/:id',
-                element:<EventDetails/>
+                element:<PrivetRoute><EventDetails/></PrivetRoute>
             },
             {
                 path: '/login',
